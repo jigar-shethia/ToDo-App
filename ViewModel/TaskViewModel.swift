@@ -14,7 +14,7 @@ final class TaskViewModel:ObservableObject {
     
     func addTask(task: Task) -> Bool {
         let taskId = Int.random(in: 4...100)
-        let newTask = Task(id: taskId, name: task.name, description: task.description, isCompleted: task.isCompleted, finishDate: task.finishDate)
+        let newTask = Task(id: UUID(), name: task.name, description: task.description, isCompleted: task.isCompleted, finishDate: task.finishDate)
         temTask.append(newTask)
         return true
     }
