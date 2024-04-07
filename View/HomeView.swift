@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct HomeView: View {
-    @ObservedObject var viewModel:TaskViewModel = TaskViewModel()
-    @State var selectedValue = TaskState.active
+    @StateObject var taskViewModel:TaskViewModel = TaskViewModel()
+    @State private var selectedValue = TaskState.active
+    @State private var showAddTaskView: Bool = false
+    @State private var showTeskDetailView: Bool = false
+    @State private var seletedTask: Task = Task()
+    @State private var refreshTaskList: Bool = true
+    
     
     var body: some View {
         
@@ -21,10 +26,10 @@ struct HomeView: View {
             }
             .pickerStyle(.segmented)
             .onChange(of: selectedValue) { newValue in
-                viewModel.getTask(isActive: selectedValue.rawValue == "Active")
+                taskViewModel.getTask(isActive: selectedValue.rawValue == "Active")
             }
             
-            List(viewModel.task){task in
+            List(taskViewModel.task){task in
                 VStack(alignment: .leading) {
                     
                     Text(task.name)
@@ -39,18 +44,31 @@ struct HomeView: View {
                     }
                     
                     
+                } .onTapGesture {
+                    seletedTask = task
+                    showTeskDetailView.toggle()
                 }
-            }.onAppear{
-                viewModel.getTask(isActive: true)
-            }.navigationTitle("Home")
+            } .onAppear{
+                taskViewModel.getTask(isActive: true)
+            }
+            .onChange(of: refreshTaskList, {
+                taskViewModel.getTask(isActive: selectedValue.rawValue == "Active")
+            })
+            .navigationTitle("Home")
                 .toolbar{
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
-                        
+                            showAddTaskView.toggle()
                         } label: {
                             Image(systemName: "plus")
                         }
                     }
+                }
+                .sheet(isPresented: $showAddTaskView) {
+                    AddTaskView(taskViewModel: taskViewModel,showAddTaskView: $showAddTaskView, refreshTaskList: $refreshTaskList)
+                }
+                .sheet(isPresented: $showTeskDetailView) {
+                    TaskDetailView(taskViewModel: taskViewModel, showTeskDetailView: $showTeskDetailView, selectedTask: $seletedTask, refreshTaskList: $refreshTaskList)
                 }
             
             
