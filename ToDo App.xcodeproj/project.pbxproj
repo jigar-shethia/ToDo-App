@@ -10,6 +10,7 @@
 		1715E1732BC32B4200C33A1E /* TaskEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715E1712BC32B4200C33A1E /* TaskEntity+CoreDataClass.swift */; };
 		1715E1742BC32B4300C33A1E /* TaskEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715E1722BC32B4200C33A1E /* TaskEntity+CoreDataProperties.swift */; };
 		1715E1792BC32E5000C33A1E /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715E1782BC32E5000C33A1E /* TaskRepository.swift */; };
+		1715E17B2BC33C7E00C33A1E /* TaskViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715E17A2BC33C7E00C33A1E /* TaskViewModelFactory.swift */; };
 		177C28C52BC14361003C78D7 /* ToDo_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177C28C42BC14361003C78D7 /* ToDo_AppApp.swift */; };
 		177C28C92BC14363003C78D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 177C28C82BC14363003C78D7 /* Assets.xcassets */; };
 		177C28CC2BC14363003C78D7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 177C28CB2BC14363003C78D7 /* Preview Assets.xcassets */; };
@@ -27,6 +28,7 @@
 		1715E1712BC32B4200C33A1E /* TaskEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1715E1722BC32B4200C33A1E /* TaskEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1715E1782BC32E5000C33A1E /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
+		1715E17A2BC33C7E00C33A1E /* TaskViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModelFactory.swift; sourceTree = "<group>"; };
 		177C28C12BC14361003C78D7 /* ToDo App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDo App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		177C28C42BC14361003C78D7 /* ToDo_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo_AppApp.swift; sourceTree = "<group>"; };
 		177C28C82BC14363003C78D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				177C28DD2BC14467003C78D7 /* TaskViewModel.swift */,
+				1715E17A2BC33C7E00C33A1E /* TaskViewModelFactory.swift */,
 			);
 			path = ViewModel;
 			sourceTree = SOURCE_ROOT;
@@ -221,6 +224,7 @@
 				177C28E42BC16A2B003C78D7 /* AddTaskView.swift in Sources */,
 				177C28C52BC14361003C78D7 /* ToDo_AppApp.swift in Sources */,
 				177C28E02BC14467003C78D7 /* HomeView.swift in Sources */,
+				1715E17B2BC33C7E00C33A1E /* TaskViewModelFactory.swift in Sources */,
 				1715E1792BC32E5000C33A1E /* TaskRepository.swift in Sources */,
 				1715E1732BC32B4200C33A1E /* TaskEntity+CoreDataClass.swift in Sources */,
 				1715E1742BC32B4300C33A1E /* TaskEntity+CoreDataProperties.swift in Sources */,
@@ -368,12 +372,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.imagelib.test.ToDo-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maps.gro.Hike-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -397,12 +402,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.imagelib.test.ToDo-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maps.gro.Hike-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

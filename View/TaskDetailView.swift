@@ -86,5 +86,5 @@ struct TaskDetailView: View {
 }
 
 #Preview {
-    TaskDetailView(taskViewModel: TaskViewModel(), showTeskDetailView: .constant(true), selectedTask: .constant(Task.createMockTask().first!), refreshTaskList: .constant(false))
+    TaskDetailView(taskViewModel: TaskViewModel(taskReposiory: TaskRepositoryImplementation()), showTeskDetailView: .constant(true), selectedTask: .constant(Task.createMockTask().first!), refreshTaskList: .constant(false))
 }

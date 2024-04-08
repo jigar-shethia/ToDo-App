@@ -86,5 +86,5 @@ struct AddTaskView: View {
 }
 
 #Preview {
-    AddTaskView(taskViewModel: TaskViewModel(), showAddTaskView: .constant(false), refreshTaskList: .constant(false))
+    AddTaskView(taskViewModel: TaskViewModel(taskReposiory: TaskRepositoryImplementation()), showAddTaskView: .constant(false), refreshTaskList: .constant(false))
 }
