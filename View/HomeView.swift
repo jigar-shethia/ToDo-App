@@ -13,7 +13,6 @@ struct HomeView: View {
     @State private var showAddTaskView: Bool = false
     @State private var showTeskDetailView: Bool = false
     @State private var seletedTask: Task = Task()
-    @State private var refreshTaskList: Bool = true
     
     
     var body: some View {
@@ -51,9 +50,6 @@ struct HomeView: View {
             } .onAppear{
                 taskViewModel.getTask(isCompleted: true)
             }
-            .onChange(of: refreshTaskList, {
-                taskViewModel.getTask(isCompleted: selectedValue.rawValue == "Active")
-            })
             .navigationTitle("Home")
                 .toolbar{
                     ToolbarItem(placement: .navigationBarTrailing) {
@@ -64,19 +60,28 @@ struct HomeView: View {
                         }
                     }
                 }
-                .sheet(isPresented: $showAddTaskView) {
-                    AddTaskView(taskViewModel: taskViewModel,showAddTaskView: $showAddTaskView, refreshTaskList: $refreshTaskList)
+            }
+            .sheet(isPresented: $showAddTaskView) {
+                AddTaskView(taskViewModel: taskViewModel,showAddTaskView: $showAddTaskView)
+            }
+            .sheet(isPresented: $showTeskDetailView) {
+                TaskDetailView(taskViewModel: taskViewModel, showTaskDetailView: $showTeskDetailView, selectedTask: $seletedTask)
+            }
+            .alert("Task Error", isPresented: $taskViewModel.showError, actions: {
+                Button{
+                    
+                }label :{
+                    Text("Ok")
                 }
-                .sheet(isPresented: $showTeskDetailView) {
-                    TaskDetailView(taskViewModel: taskViewModel, showTeskDetailView: $showTeskDetailView, selectedTask: $seletedTask, refreshTaskList: $refreshTaskList)
-                }
-            
+            }, message: {
+                Text(taskViewModel.errorMessage)
+            })
             
         }
         
         
     }
-}
+
 
 #Preview {
     HomeView()
