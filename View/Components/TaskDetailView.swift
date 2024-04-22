@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import DataBase
 
 struct TaskDetailView: View {
     @ObservedObject var taskViewModel :TaskViewModel

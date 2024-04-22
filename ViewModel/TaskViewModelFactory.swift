@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import DataBase
 
 final class TaskViewModelFactory {
     static func createTaskViewModel() -> TaskViewModel {

@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import StopWatch
+import DataBase
 
-struct HomeView: View {
+struct TodoView: View {
     @StateObject var taskViewModel:TaskViewModel = TaskViewModelFactory.createTaskViewModel()
     @State private var selectedValue = TaskState.active
     @State private var showAddTaskView: Bool = false
@@ -57,6 +59,7 @@ struct HomeView: View {
                             showAddTaskView.toggle()
                         } label: {
                             Image(systemName: "plus")
+                            
                         }
                     }
                 }
@@ -84,5 +87,5 @@ struct HomeView: View {
 
 
 #Preview {
-    HomeView()
+    TodoView()
 }

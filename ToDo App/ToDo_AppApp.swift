@@ -9,11 +9,11 @@ import SwiftUI
 
 @main
 struct ToDo_AppApp: App {
-    let persistenceController = PersistenceController.shared
+    
 
     var body: some Scene {
         WindowGroup {
-          HomeView()
+            HomeScreen()
         }
     }
 }
